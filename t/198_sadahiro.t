@@ -1,5 +1,5 @@
 # This file is encoded in Char::Cyrillic.
-die "This file is not encoded in ShiftJIS.\n" if q{‚ } ne "\x82\xa0";
+die "This file is not encoded in Char::Cyrillic.\n" if q{‚ } ne "\x82\xa0";
 
 use Char::Cyrillic;
 print "1..1\n";
@@ -17,4 +17,4 @@ print "ok - 1 $^X $__FILE__ (NULL)\n";
 
 __END__
 
-http://search.cpan.org/dist/ShiftJIS-Regexp/
+http://search.cpan.org/dist/Char::Cyrillic-Regexp/

@@ -28,7 +28,7 @@ BEGIN {
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.87 $ =~ /(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.88 $ =~ /(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -436,7 +436,6 @@ sub Char::Cyrillic::rindex($$;$);
 # Character class
 #
 BEGIN { eval q{ use vars qw(
-    $anchor
     $dot
     $dot_s
     $eD
@@ -465,7 +464,7 @@ BEGIN { eval q{ use vars qw(
     $eb
     $eB
 ) } }
-${Char::Ecyrillic::anchor}      = qr{\G(?:[\x00-\xFF])*?};
+
 ${Char::Ecyrillic::dot}         = qr{(?:[^\x0A])};
 ${Char::Ecyrillic::dot_s}       = qr{(?:[\x00-\xFF])};
 ${Char::Ecyrillic::eD}          = qr{(?:[^0-9])};
@@ -501,6 +500,35 @@ ${Char::Ecyrillic::not_word}    = qr{(?:[^\x30-\x39\x41-\x5A\x5F\x61-\x7A])};
 ${Char::Ecyrillic::not_xdigit}  = qr{(?:[^\x30-\x39\x41-\x46\x61-\x66])};
 ${Char::Ecyrillic::eb}          = qr{(?:\A(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[0-9A-Z_a-z])|(?<=[0-9A-Z_a-z])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]|\z))};
 ${Char::Ecyrillic::eB}          = qr{(?:(?<=[0-9A-Z_a-z])(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]))};
+
+# avoid: Name "Char::Ecyrillic::foo" used only once: possible typo at here.
+${Char::Ecyrillic::dot}         = ${Char::Ecyrillic::dot};
+${Char::Ecyrillic::dot_s}       = ${Char::Ecyrillic::dot_s};
+${Char::Ecyrillic::eD}          = ${Char::Ecyrillic::eD};
+${Char::Ecyrillic::eS}          = ${Char::Ecyrillic::eS};
+${Char::Ecyrillic::eW}          = ${Char::Ecyrillic::eW};
+${Char::Ecyrillic::eH}          = ${Char::Ecyrillic::eH};
+${Char::Ecyrillic::eV}          = ${Char::Ecyrillic::eV};
+${Char::Ecyrillic::eR}          = ${Char::Ecyrillic::eR};
+${Char::Ecyrillic::eN}          = ${Char::Ecyrillic::eN};
+${Char::Ecyrillic::not_alnum}   = ${Char::Ecyrillic::not_alnum};
+${Char::Ecyrillic::not_alpha}   = ${Char::Ecyrillic::not_alpha};
+${Char::Ecyrillic::not_ascii}   = ${Char::Ecyrillic::not_ascii};
+${Char::Ecyrillic::not_blank}   = ${Char::Ecyrillic::not_blank};
+${Char::Ecyrillic::not_cntrl}   = ${Char::Ecyrillic::not_cntrl};
+${Char::Ecyrillic::not_digit}   = ${Char::Ecyrillic::not_digit};
+${Char::Ecyrillic::not_graph}   = ${Char::Ecyrillic::not_graph};
+${Char::Ecyrillic::not_lower}   = ${Char::Ecyrillic::not_lower};
+${Char::Ecyrillic::not_lower_i} = ${Char::Ecyrillic::not_lower_i};
+${Char::Ecyrillic::not_print}   = ${Char::Ecyrillic::not_print};
+${Char::Ecyrillic::not_punct}   = ${Char::Ecyrillic::not_punct};
+${Char::Ecyrillic::not_space}   = ${Char::Ecyrillic::not_space};
+${Char::Ecyrillic::not_upper}   = ${Char::Ecyrillic::not_upper};
+${Char::Ecyrillic::not_upper_i} = ${Char::Ecyrillic::not_upper_i};
+${Char::Ecyrillic::not_word}    = ${Char::Ecyrillic::not_word};
+${Char::Ecyrillic::not_xdigit}  = ${Char::Ecyrillic::not_xdigit};
+${Char::Ecyrillic::eb}          = ${Char::Ecyrillic::eb};
+${Char::Ecyrillic::eB}          = ${Char::Ecyrillic::eB};
 
 #
 # Cyrillic split

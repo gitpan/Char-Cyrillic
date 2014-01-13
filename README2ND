@@ -1,14 +1,12 @@
 NAME
 
-       Char::Cyrillic - Source code filter for Cyrillic script (Imitation JPerl)
+       Cyrillic - Source code filter for Cyrillic script (Imitation JPerl)
 
 SYNOPSIS
 
     In your script:
 
-      use Char::Cyrillic; # CPAN formal style
-         or
-      use Cyrillic; # casual style
+      use Cyrillic;
 
     At command prompt:
 
